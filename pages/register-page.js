@@ -53,6 +53,7 @@ class RegisterPage extends BasePage {
 
     async clickRegisterBtn() {
         await this._registerBtn.click();
+        await this.page.waitForLoadState('networkidle');
         return new RegisterResultPage(this.page);
     }
 
