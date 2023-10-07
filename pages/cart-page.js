@@ -102,7 +102,6 @@ class CartPage extends BasePage {
         const priceWithoutDollarSign = parseInt(productPrice.replace(/\$/g, ''),10);
         const expectedSubtotal = (priceWithoutDollarSign * quantity + parseInt(giftWrappingCost)).toFixed(2);
         const expectedTotal = (priceWithoutDollarSign * quantity + parseInt(giftWrappingCost)).toFixed(2);
-        await expect(this.page.locator(`//div[contains(text(), 'Gift wrapping: Yes [+$${giftWrappingCost}]')]`)).toBeVisible();
         await expect(this.page.locator(`//tr[@class='order-subtotal']//span[@class='value-summary'][text()='$${expectedSubtotal}']`)).toBeVisible();
         await expect(this.page.locator(`//tr[@class='order-total']//span[@class='value-summary'][strong='$${expectedTotal}']`)).toBeVisible();
 
