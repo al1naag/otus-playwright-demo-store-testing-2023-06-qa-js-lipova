@@ -22,7 +22,6 @@
     "allure-commandline": "^2.24.1",
     "allure-playwright": "^2.9.2",
     "eslint": "^8.50.0",
-    "experimental-allure-playwright": "^0.0.3",
     "playwright": "^1.38.1"
   }
 }
