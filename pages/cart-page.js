@@ -6,7 +6,6 @@ class CartPage extends BasePage {
 
     constructor(page) {
         super(page);
-        this.page = page;
         this._emptyCartText = '//div[contains(text(),"Your Shopping Cart is empty!")]';
         this._inputQuantity = '.qty-input';
         this._updateCartBtn = '//button[@id="updatecart"]';
@@ -86,8 +85,7 @@ class CartPage extends BasePage {
 
     async addGiftWrapping() {
         await this.page.locator(this._selectGiftWrapping).selectOption('2');
-        await this.page.waitForTimeout(3000);
-        await this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('networkidle', { timeout: 3000 });
     }
 
     async openCheckout() {
@@ -104,7 +102,6 @@ class CartPage extends BasePage {
         const expectedTotal = (priceWithoutDollarSign * quantity + parseInt(giftWrappingCost)).toFixed(2);
         await expect(this.page.locator(`//tr[@class='order-subtotal']//span[@class='value-summary'][text()='$${expectedSubtotal}']`)).toBeVisible();
         await expect(this.page.locator(`//tr[@class='order-total']//span[@class='value-summary'][strong='$${expectedTotal}']`)).toBeVisible();
-
     }
 }
 

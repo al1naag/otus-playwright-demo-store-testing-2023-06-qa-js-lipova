@@ -1,10 +1,10 @@
 import {test} from '@playwright/test';
-import config from "../config/config.js";
+import userFixture from "../fixtures/userFixture.js";
 import HomePage from "../pages/home-page";
 import LoginPage from "../pages/login-page";
 import RegisterPage from "../pages/register-page";
 
-const {user} = config;
+const {user} = userFixture;
 const productTitle = 'HTC One M8 Android L 5.0 Lollipop';
 
 test('Checkout as a guest', async ({page}) => {

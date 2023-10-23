@@ -5,7 +5,6 @@ class CheckoutPage extends BasePage {
 
     constructor(page) {
         super(page);
-        this.page = page;
         this._checkoutAsGuestBtn = '//button[normalize-space()="Checkout as Guest"]';
         this._billingSaveBtn = '//button[@onclick="Billing.save()"]';
         this._shippingMethodSaveBtn = '//button[@onclick="ShippingMethod.save()"]';

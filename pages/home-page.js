@@ -10,7 +10,6 @@ class HomePage extends BasePage {
 
     constructor(page) {
         super(page);
-        this.page = page;
         this._cartLink = '//a[normalize-space()="shopping cart"]';
         this._wishlistLink = '//a[normalize-space()="wishlist"]';
         this._comparisonLink = '//a[normalize-space()="product comparison"]';

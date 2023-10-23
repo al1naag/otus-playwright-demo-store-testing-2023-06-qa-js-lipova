@@ -5,7 +5,6 @@ class RegisterPage extends BasePage {
 
     constructor(page) {
         super(page);
-        this.page = page;
         this._inputFirstName = page.locator('#FirstName');
         this._inputLastName = page.locator('#LastName');
         this._inputEmail = page.locator('#Email');
@@ -53,8 +52,7 @@ class RegisterPage extends BasePage {
 
     async clickRegisterBtn() {
         await this._registerBtn.click();
-        await this.page.waitForTimeout(3000);
-        await this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('networkidle', { timeout: 3000 });
         return new RegisterResultPage(this.page);
     }
 

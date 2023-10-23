@@ -4,7 +4,6 @@ import BasePage from "./base-page";
 class CategoryPage extends BasePage {
     constructor(page) {
         super(page);
-        this.page = page;
     }
 
     async open(category) {

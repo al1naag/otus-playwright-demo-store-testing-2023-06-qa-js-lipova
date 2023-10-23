@@ -7,10 +7,8 @@ class ComparePage extends BasePage {
 
     constructor(page) {
         super(page);
-        this.page = page;
         this._emptyCompareText = '//div[contains(text(),"You have no items to compare.")]';
         this._clearBtn ='//a[normalize-space()="Clear list"]';
-
     }
 
     async checkProductInCompareProductsList(productTitle, productPrice) {

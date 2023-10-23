@@ -1,6 +1,6 @@
 import {faker} from '@faker-js/faker';
 
-const config = {
+const userFixture = {
     user: {
         firstName: faker.person.firstName(),
         lastName: faker.person.lastName(),
@@ -29,4 +29,4 @@ const config = {
     },
 
 }
-export default config
+export default userFixture

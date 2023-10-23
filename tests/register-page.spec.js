@@ -1,8 +1,8 @@
 import { test } from '@playwright/test';
-import config from "../config/config.js";
+import userFixture from "../fixtures/userFixture.js";
 
 import RegisterPage from '../pages/register-page';
-const { user  } = config;
+const { user  } = userFixture;
 
 test('Register New User Account', async ({page}) => {
     const registerPage = new RegisterPage(page);

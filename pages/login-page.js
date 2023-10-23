@@ -6,7 +6,6 @@ class LoginPage extends BasePage {
 
     constructor(page) {
         super(page);
-        this.page = page;
         this._inputEmail = page.locator('#Email');
         this._inputPassword = page.locator('#Password');
         this._loginBtn = page.locator('//button[normalize-space()="Log in"]');
